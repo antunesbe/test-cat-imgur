@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cats
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="slide">
+      <ion-icon name="barcode"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="grid" checked>
+      <ion-icon name="grid"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="list">
+      <ion-icon name="list"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div class="wrapper" [ngClass]="{'card-grid-view': view === 'grid', 'card-list-view': view === 'list'}">
+    <ng-container *ngIf="view === 'slide'">
+      <ion-slides #slides class="slider" (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let image of images">
+          <ion-img [src]="image.link"></ion-img>
+        </ion-slide>
+      </ion-slides>
+      <p class="pager">{{currentPage + '/' + images?.length}}</p>
+    </ng-container>
+    <ng-container *ngIf="view !== 'slide'">
+      <ion-card *ngFor="let image of images" >
+        <ion-img [src]="image.link"></ion-img>
+      </ion-card>
+    </ng-container>
+    
+  </div>
+</ion-content>

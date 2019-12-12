@@ -1,0 +1,7 @@
+{
+  "name": "test-cat-imgur",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

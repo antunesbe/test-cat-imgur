@@ -1,0 +1,58 @@
+:host {
+    .wrapper {
+        margin-top: 1rem;
+    }
+    .card-grid-view {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+
+        ion-card {
+            max-height: 15rem;
+            height: fit-content;
+            width: 15rem;
+            max-width: 28%;
+            padding: 0;
+            margin: .5rem;
+    
+            ion-img {
+                min-width: 100%;
+                min-height: 100%;
+                align-self: flex-start;
+            }
+        }
+    }
+
+    .card-list-view {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        ion-card {
+            margin: .5rem;
+    
+            ion-img {
+                min-width: 100%;
+                min-height: 100%;
+                align-self: flex-start;
+            }
+        }
+    }
+
+    .slider {
+        height: 30rem;
+
+        ion-slide {
+            height: 28rem;
+        }
+    }
+    .pager {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+}
